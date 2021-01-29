@@ -1,4 +1,7 @@
-﻿'Taylor Herndon
+﻿Option Strict On
+Option Explicit On
+
+'Taylor Herndon
 'RCET0265
 'Spring 2021
 'Simple Calculator
@@ -20,11 +23,12 @@ Module SimpleCalculator
 
 LineFirstInput:
 
+        'Get first number
         Console.Clear()
         Console.WriteLine("What is the first number?")
         Try
 
-            Value1 = Console.ReadLine()
+            Value1 = Convert.ToDouble(Console.ReadLine())
 
         Catch
 
@@ -53,9 +57,11 @@ LineSecondInput:
 
         Console.WriteLine("Now, what is our second number going to be?")
 
+        'Get second number
         Try
 
-            Value2 = Console.ReadLine()
+
+            Value2 = Convert.ToDouble(Console.ReadLine())
 
         Catch
 
@@ -72,6 +78,7 @@ LineSecondInput:
 
 LineChooseFunction:
 
+        'Ask for function
         Console.Clear()
         Console.WriteLine("Ok, so we have " & Value1 & " and " & Value2)
         System.Threading.Thread.Sleep(1500)
@@ -130,6 +137,7 @@ LineChooseFunction:
 
         End Select
 
+        'Give the result
         Console.Clear()
         Console.Write("The result of " & Value1 & " " & Operation & " " & Value2 & " is")
 
