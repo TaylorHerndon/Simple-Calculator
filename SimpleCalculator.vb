@@ -10,11 +10,11 @@ Module SimpleCalculator
 
     Sub Main()
 
-        Dim Value1 As Double = 0
-        Dim Value2 As Double = 0
-        Dim Exception As Boolean = False
-        Dim Operation As String = ""
-        Dim Result As Double = 0
+        Dim value1 As Double = 0
+        Dim value2 As Double = 0
+        Dim repeat As Boolean = False
+        Dim operation As String = ""
+        Dim result As Double = 0
 
         Console.WriteLine("Hello there Mr.User.")
         System.Threading.Thread.Sleep(1000)
@@ -28,7 +28,7 @@ LineFirstInput:
         Console.WriteLine("What is the first number?")
         Try
 
-            Value1 = Convert.ToDouble(Console.ReadLine())
+            value1 = Convert.ToDouble(Console.ReadLine())
 
         Catch
 
@@ -39,18 +39,18 @@ LineFirstInput:
             Console.WriteLine("Now go back and try again!")
             System.Threading.Thread.Sleep(2000)
 
-            Exception = True
+            repeat = True
 
             GoTo LineFirstInput
 
         End Try
 
-        If Exception = True Then
+        If repeat = True Then
             Console.WriteLine("Thanks for actually putting in a number this time...")
         End If
 
         Console.Clear()
-        Console.WriteLine("Our first number is " & Value1)
+        Console.WriteLine("Our first number is " & value1)
         System.Threading.Thread.Sleep(2000)
 
 LineSecondInput:
@@ -61,7 +61,7 @@ LineSecondInput:
         Try
 
 
-            Value2 = Convert.ToDouble(Console.ReadLine())
+            value2 = Convert.ToDouble(Console.ReadLine())
 
         Catch
 
@@ -80,7 +80,7 @@ LineChooseFunction:
 
         'Ask for function
         Console.Clear()
-        Console.WriteLine("Ok, so we have " & Value1 & " and " & Value2)
+        Console.WriteLine("Ok, so we have " & value1 & " and " & value2)
         System.Threading.Thread.Sleep(1500)
         Console.WriteLine("What do you want your function to be?")
         System.Threading.Thread.Sleep(1500)
@@ -89,47 +89,38 @@ LineChooseFunction:
         Select Case Console.ReadKey.Key
 
             Case ConsoleKey.D1
-
-                Result = Value1 + Value2
-                Operation = "+"
+                result = value1 + value2
+                operation = "+"
 
             Case ConsoleKey.NumPad1
-
-                Result = Value1 + Value2
-                Operation = "+"
+                result = value1 + value2
+                operation = "+"
 
             Case ConsoleKey.D2
-
-                Result = Value1 - Value2
-                Operation = "-"
+                result = value1 - value2
+                operation = "-"
 
             Case ConsoleKey.NumPad2
-
-                Result = Value1 - Value2
-                Operation = "-"
+                result = value1 - value2
+                operation = "-"
 
             Case ConsoleKey.D3
-
-                Result = Value1 * Value2
-                Operation = "x"
+                result = value1 * value2
+                operation = "x"
 
             Case ConsoleKey.NumPad3
-
-                Result = Value1 * Value2
-                Operation = "x"
+                result = value1 * value2
+                operation = "x"
 
             Case ConsoleKey.D4
-
-                Result = Value1 / Value2
-                Operation = "÷"
+                result = value1 / value2
+                operation = "÷"
 
             Case ConsoleKey.NumPad4
-
-                Result = Value1 / Value2
-                Operation = "÷"
+                result = value1 / value2
+                operation = "÷"
 
             Case Else
-
                 Console.Clear()
                 Console.WriteLine("Come on bud... 1 - 4 you can do this...")
                 System.Threading.Thread.Sleep(3000)
@@ -139,7 +130,7 @@ LineChooseFunction:
 
         'Give the result
         Console.Clear()
-        Console.Write("The result of " & Value1 & " " & Operation & " " & Value2 & " is")
+        Console.Write("The result of " & value1 & " " & operation & " " & value2 & " is")
 
         System.Threading.Thread.Sleep(250)
         Console.Write(".")
@@ -149,7 +140,7 @@ LineChooseFunction:
         Console.WriteLine(".")
         System.Threading.Thread.Sleep(250)
 
-        Console.WriteLine("[ " & Result & " ]")
+        Console.WriteLine("[ " & result & " ]")
         System.Threading.Thread.Sleep(1000)
         Console.WriteLine("Would you like to do some more computing?")
         Console.WriteLine("Y - N")
